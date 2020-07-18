@@ -1,0 +1,364 @@
+*{
+	box-sizing: border-box;
+	
+}
+
+/* ----- Custom Properties ----- */
+
+:root {
+
+  
+  --ff-text:'Source Sans Pro', sans-serif;
+  --ff-heading:'Montserrat', sans-serif;
+
+  --fw-textlight: 200;
+  --fw-textreg: 300;
+
+  --fw-headbold: 800;
+  --fw-headblack: 900;
+
+
+  --clr-light: #fff;
+  --clr-dark: #303030;
+  --clr-green: #59c995;
+
+
+  --fs-h1:2.8rem;
+  --fs-body:1.2rem;
+}
+
+/*For larger Screens*/
+@media (min-width: 800px) {
+	:root{
+		--fs-h1:3.2rem;
+  		--fs-body:1.6rem;
+
+  			
+}
+	}
+
+
+
+
+
+/* ----- General Properties----- */
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	background-color: var(--clr-light);
+	color: var(--clr-dark);
+	margin: 0;
+	font-family: var(--ff-text);
+	font-size: var(--fs-body);
+	line-height: 1.6;
+}
+
+section{
+	padding: 5em 2em;
+}
+
+img{
+	display: block;
+	
+	max-width: 100%;
+}
+
+
+
+
+
+/* ----- Typography ----- */
+
+
+h1
+{
+	line-height: 1.2
+	margin: 0;
+	font-family: var(--ff-heading);
+	font-size: var(--fs-h1);
+	font-weight: var(--fw-headblack);
+}
+
+p{
+	line-height: 1.2
+	margin: 0;
+	font-family: var(--ff-text);
+	font-size: var(--fs-body);
+	font-weight: var(--fw-textreg);
+
+
+}
+
+span{
+	background-color: var(--clr-dark);
+	color: var(--clr-light);
+	letter-spacing: .06em;
+}
+
+
+
+
+
+/* ----- Introduction Section ----- */
+
+.intro{
+padding-top: 3em;
+}
+
+.section_text__intro{
+
+justify-content: center;
+padding-left: 1em;
+padding-right: 1em;
+font-size: var(--fs-h1);
+font-family: var(--ff-heading);
+font-weight: var(--fw-headblack);
+letter-spacing: .06em;
+	}
+
+
+
+
+.logo{
+	max-width: 100px;
+	padding-top: 1em;
+	padding-left: 1em;
+}
+
+header{
+	display: flex;
+	justify-content: space-between;
+}
+
+nav{
+	position: fixed;
+	background-color: var(--clr-dark);
+	color: :var(--clr-light);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right:0;
+	z-index: 100;
+
+	transform: translateX(100%);
+	transition: 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+
+.nav_list{
+	list-style: none;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+	padding: 2em;
+}
+
+.nav_link{
+	font-family: var(--ff-heading);
+	color: var(--clr-light);
+	text-decoration: none;
+	font-size: var(--fs-h1);
+	font-weight: var(--fw-headblack);
+
+}
+
+.nav_link:hover{
+	color: var(--clr-green);
+}
+
+.nav-toggle{
+	padding: 2em;
+	background: transparent;
+	border:0;
+	cursor: pointer;
+	position: absolute;
+	right: 1em;
+	z-index: 1000;
+
+}
+
+.nav-open .nav{
+	transform: translateX(0%);
+}
+
+.nav-open .nav-toggle{
+	position: fixed;
+}
+
+.nav-open .hamburger{
+	transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before{
+	transform: rotate(90deg) translateX(-6px);
+}
+
+
+.nav-open .hamburger::after{
+	opacity: 0;
+}
+.hamburger{
+	
+	display: block;
+	position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+	background-color: var(--clr-green);
+	color: var(--clr-light);
+	width: 2em;
+	height: 3px;
+	border-radius: 1em;
+	transition: transform 250ms ease-in-out;
+	
+	
+}
+
+.hamburger::before,
+.hamburger::after{
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.hamburger::before{
+	top:6px;
+}
+.hamburger::after{
+	bottom:6px;
+}
+
+
+@media (min-width: 600px) {
+
+}
+
+
+
+
+
+
+
+
+
+/* ----- Web Design section ----- */
+
+.web{
+	background-color: var(--clr-dark);
+	opacity: 90%;
+	background-image: url('../images/about_bg_img.jpg');
+	background-size: cover;
+	background-blend-mode: multiply;
+	color: var(--clr-light);
+}
+
+
+
+.portfolio{
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	padding-bottom: 5em;
+}
+
+
+.portfolio_item{
+	position: relative;
+	background-color: var(--clr-dark);
+	overflow: hidden;
+}
+
+.caption{
+	color: var(--clr-light);
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	text-align: center;
+	opacity: 0;
+	visibility: hidden;
+	opacity: 300ms cubic-bezier(.5, 0, .5, 1);;
+}
+
+
+.img_container:hover .caption{
+	visibility: visible;
+  	opacity: 1;
+  	z-index: 100;
+}
+
+.img_container:hover .portfolio_img{
+	
+	opacity: 20%;
+}
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+/* ----- Drawings section ----- */
+
+
+.illustration{
+	background-color: var(--clr-light);
+	color: var(--clr-dark);
+}
+
+
+
+
+
+/* ----- Footer ----- */
+footer{
+	height: 250px;
+	background-color: var(--clr-dark);
+	color: var(--clr-light)
+	
+	
+}
+
+footer p, a{
+	color: var(--clr-light);
+	font-size: var(--fs-body);
+	text-align: center;
+	
+
+	
+}
+
+footer p{
+	padding-top: 2em;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
