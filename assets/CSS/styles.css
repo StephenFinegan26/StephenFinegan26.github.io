@@ -23,19 +23,34 @@
   --clr-green: #59c995;
 
 
-  --fs-h1:2.8rem;
+  --fs-h1:1.5rem;
   --fs-body:1.2rem;
 }
 
-/*For larger Screens*/
-@media (min-width: 800px) {
+
+/* ----- Small devices, mobiles, tablets in portrait etc----- */
+
+@media (min-width: 600px) {
+	:root{
+		--fs-h1:1.8rem;
+  		--fs-body:1.6rem;
+  		
+
+  		}
+  	}
+
+ /* ----- larger tablets, tablets in landscape----- */
+@media (min-width: 768px) {
 	:root{
 		--fs-h1:3.2rem;
-  		--fs-body:1.6rem;
+  		--fs-body:1.4rem;
+  		
 
   			
 }
 	}
+
+
 
 
 
@@ -249,7 +264,7 @@ nav{
 
 
 
-/* ----- Web Design section ----- */
+/* ----- Portfolio sections for Web design & drawings ----- */
 
 .web{
 	background-color: var(--clr-dark);
@@ -266,7 +281,8 @@ nav{
 
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	padding-bottom: 5em;
+
+	
 }
 
 
@@ -304,28 +320,9 @@ nav{
 
 
 
-
-
-
-
-
-	
-	
-
-
-/* ----- Drawings section ----- */
-
-
-.illustration{
-	background-color: var(--clr-light);
-	color: var(--clr-dark);
-}
-
-
-
-
-
 /* ----- Footer ----- */
+
+
 footer{
 	height: 250px;
 	background-color: var(--clr-dark);
